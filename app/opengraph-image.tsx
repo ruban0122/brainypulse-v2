@@ -81,7 +81,7 @@ export default function OGImage() {
         </svg>
 
         {/* Content */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 0, zIndex: 1 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 28 }}>
             <div
@@ -114,6 +114,8 @@ export default function OGImage() {
           {/* Headline */}
           <div
             style={{
+              display: 'flex',
+              flexDirection: 'column',
               fontSize: 64,
               fontWeight: 800,
               color: '#ffffff',
@@ -122,7 +124,7 @@ export default function OGImage() {
               maxWidth: 580,
             }}
           >
-            Free Cognitive<br />
+            <span>Free Cognitive</span>
             <span style={{ color: '#00ff88' }}>Tests</span>
           </div>
 
