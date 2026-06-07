@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/ui/navbar'
 import Footer from '@/components/ui/footer'
+
+const ADSENSE_CLIENT = 'ca-pub-9880823545934880'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -86,6 +89,11 @@ export const metadata: Metadata = {
     },
   },
   category: 'education',
+  verification: {
+    // Replace with the token from Google Search Console > Settings >
+    // Ownership verification > HTML tag (the value of the `content` attribute).
+    google: 'REPLACE_WITH_SEARCH_CONSOLE_TOKEN',
+  },
 }
 
 export default function RootLayout({
@@ -102,6 +110,13 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
+        <Script
+          id="adsbygoogle-init"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
